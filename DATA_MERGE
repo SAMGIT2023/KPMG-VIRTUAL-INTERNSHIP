@@ -1,0 +1,10 @@
+#MERGING TRANSACTION,DEMOGRAPHICS AND ADDRESS
+import pandas as pd
+Transactions=pd.read_excel("C:\\Users\\HP PAVILION\Downloads\\KPMG_VI_New_raw_data_update_final (7).xlsx", sheet_name=0)
+
+Demographics=pd.read_excel("C:\\Users\\HP PAVILION\\Downloads\\KPMG_VI_New_raw_data_update_final (7).xlsx", sheet_name=2)
+
+Address=pd.read_excel("C:\\Users\\HP PAVILION\Downloads\\KPMG_VI_New_raw_data_update_final (7).xlsx", sheet_name=3)
+
+New_tansactions_merged= pd.merge(Transactions, Demographics, Address, on=['customer_id'], how='inner')
+New_tansactions_merged.head(10)
